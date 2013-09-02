@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="sepModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="sepModelStoreContainer">
+          <EntitySet Name="group_visitor" EntityType="sepModel.Store.group_visitor" store:Type="Tables" Schema="sep" />
+          <EntitySet Name="park_ranger" EntityType="sepModel.Store.park_ranger" store:Type="Tables" Schema="sep" />
+          <EntitySet Name="track" EntityType="sepModel.Store.track" store:Type="Tables" Schema="sep" />
+          <EntitySet Name="visitor" EntityType="sepModel.Store.visitor" store:Type="Tables" Schema="sep" />
+          <EntitySet Name="visitor_track" EntityType="sepModel.Store.visitor_track" store:Type="Tables" Schema="sep" />
+          <AssociationSet Name="d" Association="sepModel.Store.d">
+            <End Role="group_visitor" EntitySet="group_visitor" />
+            <End Role="visitor_track" EntitySet="visitor_track" />
+          </AssociationSet>
+          <AssociationSet Name="ddd" Association="sepModel.Store.ddd">
+            <End Role="group_visitor" EntitySet="group_visitor" />
+            <End Role="visitor" EntitySet="visitor" />
+          </AssociationSet>
+          <AssociationSet Name="s" Association="sepModel.Store.s">
+            <End Role="track" EntitySet="track" />
+            <End Role="visitor_track" EntitySet="visitor_track" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="group_visitor">
+          <Key>
+            <PropertyRef Name="group_id" />
+          </Key>
+          <Property Name="group_id" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="startTime" Type="datetime" />
+          <Property Name="endTime" Type="datetime" />
+          <Property Name="duration" Type="int" />
+        </EntityType>
+        <EntityType Name="park_ranger">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="businessPhone" Type="varchar" MaxLength="10" />
+          <Property Name="dob" Type="datetime" />
+          <Property Name="password" Type="varchar" MaxLength="10" />
+          <Property Name="firstName" Type="varchar" MaxLength="20" />
+          <Property Name="lastName" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="track">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="startPoint" Type="varchar" MaxLength="45" />
+          <Property Name="destination" Type="varchar" MaxLength="45" />
+          <Property Name="visitedTime" Type="int" />
+          <Property Name="overdueTime" Type="int" />
+          <Property Name="duration" Type="int" />
+        </EntityType>
+        <EntityType Name="visitor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="firstName" Type="varchar" MaxLength="20" />
+          <Property Name="lastName" Type="varchar" MaxLength="20" />
+          <Property Name="email" Type="varchar" MaxLength="20" />
+          <Property Name="address" Type="varchar" MaxLength="40" />
+          <Property Name="contactNumber" Type="varchar" MaxLength="10" />
+          <Property Name="dob" Type="datetime" />
+          <Property Name="signedOut" Type="bool" />
+          <Property Name="isoverdue" Type="bool" />
+          <Property Name="medicalDetails" Type="varchar" />
+          <Property Name="group_id" Type="varchar" MaxLength="50" />
+          <Property Name="mailSent" Type="bool" />
+        </EntityType>
+        <EntityType Name="visitor_track">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="group_ID" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="track_ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <Association Name="d">
+          <End Role="group_visitor" Type="sepModel.Store.group_visitor" Multiplicity="1" />
+          <End Role="visitor_track" Type="sepModel.Store.visitor_track" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="group_visitor">
+              <PropertyRef Name="group_id" />
+            </Principal>
+            <Dependent Role="visitor_track">
+              <PropertyRef Name="group_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ddd">
+          <End Role="group_visitor" Type="sepModel.Store.group_visitor" Multiplicity="0..1" />
+          <End Role="visitor" Type="sepModel.Store.visitor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="group_visitor">
+              <PropertyRef Name="group_id" />
+            </Principal>
+            <Dependent Role="visitor">
+              <PropertyRef Name="group_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="s">
+          <End Role="track" Type="sepModel.Store.track" Multiplicity="1" />
+          <End Role="visitor_track" Type="sepModel.Store.visitor_track" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="track">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="visitor_track">
+              <PropertyRef Name="track_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="sepModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="sepEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="group_visitor" EntityType="sepModel.group_visitor" />
+          <EntitySet Name="park_ranger" EntityType="sepModel.park_ranger" />
+          <EntitySet Name="track" EntityType="sepModel.track" />
+          <EntitySet Name="visitor" EntityType="sepModel.visitor" />
+          <EntitySet Name="visitor_track" EntityType="sepModel.visitor_track" />
+          <AssociationSet Name="d" Association="sepModel.d">
+            <End Role="group_visitor" EntitySet="group_visitor" />
+            <End Role="visitor_track" EntitySet="visitor_track" />
+          </AssociationSet>
+          <AssociationSet Name="ddd" Association="sepModel.ddd">
+            <End Role="group_visitor" EntitySet="group_visitor" />
+            <End Role="visitor" EntitySet="visitor" />
+          </AssociationSet>
+          <AssociationSet Name="s" Association="sepModel.s">
+            <End Role="track" EntitySet="track" />
+            <End Role="visitor_track" EntitySet="visitor_track" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="group_visitor">
+          <Key>
+            <PropertyRef Name="group_id" />
+          </Key>
+          <Property Name="group_id" Type="String" Nullable="false" />
+          <Property Name="startTime" Type="DateTime" />
+          <Property Name="endTime" Type="DateTime" />
+          <Property Name="duration" Type="Int32" />
+          <NavigationProperty Name="visitor_track" Relationship="sepModel.d" FromRole="group_visitor" ToRole="visitor_track" />
+          <NavigationProperty Name="visitor" Relationship="sepModel.ddd" FromRole="group_visitor" ToRole="visitor" />
+        </EntityType>
+        <EntityType Name="park_ranger">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="businessPhone" Type="String" />
+          <Property Name="dob" Type="DateTime" />
+          <Property Name="password" Type="String" />
+          <Property Name="firstName" Type="String" />
+          <Property Name="lastName" Type="String" />
+        </EntityType>
+        <EntityType Name="track">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="startPoint" Type="String" />
+          <Property Name="destination" Type="String" />
+          <Property Name="visitedTime" Type="Int32" />
+          <Property Name="overdueTime" Type="Int32" />
+          <Property Name="duration" Type="Int32" />
+          <NavigationProperty Name="visitor_track" Relationship="sepModel.s" FromRole="track" ToRole="visitor_track" />
+        </EntityType>
+        <EntityType Name="visitor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" />
+          <Property Name="firstName" Type="String" />
+          <Property Name="lastName" Type="String" />
+          <Property Name="email" Type="String" />
+          <Property Name="address" Type="String" />
+          <Property Name="contactNumber" Type="String" />
+          <Property Name="dob" Type="DateTime" />
+          <Property Name="signedOut" Type="Boolean" />
+          <Property Name="isoverdue" Type="Boolean" />
+          <Property Name="medicalDetails" Type="String" />
+          <Property Name="group_id" Type="String" />
+          <Property Name="mailSent" Type="Boolean" />
+          <NavigationProperty Name="group_visitor" Relationship="sepModel.ddd" FromRole="visitor" ToRole="group_visitor" />
+        </EntityType>
+        <EntityType Name="visitor_track">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="group_ID" Type="String" Nullable="false" />
+          <Property Name="track_ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="group_visitor" Relationship="sepModel.d" FromRole="visitor_track" ToRole="group_visitor" />
+          <NavigationProperty Name="track" Relationship="sepModel.s" FromRole="visitor_track" ToRole="track" />
+        </EntityType>
+        <Association Name="d">
+          <End Role="group_visitor" Type="sepModel.group_visitor" Multiplicity="1" />
+          <End Role="visitor_track" Type="sepModel.visitor_track" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="group_visitor">
+              <PropertyRef Name="group_id" />
+            </Principal>
+            <Dependent Role="visitor_track">
+              <PropertyRef Name="group_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ddd">
+          <End Role="group_visitor" Type="sepModel.group_visitor" Multiplicity="0..1" />
+          <End Role="visitor" Type="sepModel.visitor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="group_visitor">
+              <PropertyRef Name="group_id" />
+            </Principal>
+            <Dependent Role="visitor">
+              <PropertyRef Name="group_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="s">
+          <End Role="track" Type="sepModel.track" Multiplicity="1" />
+          <End Role="visitor_track" Type="sepModel.visitor_track" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="track">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="visitor_track">
+              <PropertyRef Name="track_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="sepModelStoreContainer" CdmEntityContainer="sepEntities2">
+          <EntitySetMapping Name="group_visitor"><EntityTypeMapping TypeName="sepModel.group_visitor"><MappingFragment StoreEntitySet="group_visitor">
+            <ScalarProperty Name="group_id" ColumnName="group_id" />
+            <ScalarProperty Name="startTime" ColumnName="startTime" />
+            <ScalarProperty Name="endTime" ColumnName="endTime" />
+            <ScalarProperty Name="duration" ColumnName="duration" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="park_ranger"><EntityTypeMapping TypeName="sepModel.park_ranger"><MappingFragment StoreEntitySet="park_ranger">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="businessPhone" ColumnName="businessPhone" />
+            <ScalarProperty Name="dob" ColumnName="dob" />
+            <ScalarProperty Name="password" ColumnName="password" />
+            <ScalarProperty Name="firstName" ColumnName="firstName" />
+            <ScalarProperty Name="lastName" ColumnName="lastName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="track"><EntityTypeMapping TypeName="sepModel.track"><MappingFragment StoreEntitySet="track">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="startPoint" ColumnName="startPoint" />
+            <ScalarProperty Name="destination" ColumnName="destination" />
+            <ScalarProperty Name="visitedTime" ColumnName="visitedTime" />
+            <ScalarProperty Name="overdueTime" ColumnName="overdueTime" />
+            <ScalarProperty Name="duration" ColumnName="duration" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="visitor"><EntityTypeMapping TypeName="sepModel.visitor"><MappingFragment StoreEntitySet="visitor">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="firstName" ColumnName="firstName" />
+            <ScalarProperty Name="lastName" ColumnName="lastName" />
+            <ScalarProperty Name="email" ColumnName="email" />
+            <ScalarProperty Name="address" ColumnName="address" />
+            <ScalarProperty Name="contactNumber" ColumnName="contactNumber" />
+            <ScalarProperty Name="dob" ColumnName="dob" />
+            <ScalarProperty Name="signedOut" ColumnName="signedOut" />
+            <ScalarProperty Name="isoverdue" ColumnName="isoverdue" />
+            <ScalarProperty Name="medicalDetails" ColumnName="medicalDetails" />
+            <ScalarProperty Name="group_id" ColumnName="group_id" />
+            <ScalarProperty Name="mailSent" ColumnName="mailSent" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="visitor_track"><EntityTypeMapping TypeName="sepModel.visitor_track"><MappingFragment StoreEntitySet="visitor_track">
+            <ScalarProperty Name="group_ID" ColumnName="group_ID" />
+            <ScalarProperty Name="track_ID" ColumnName="track_ID" />
+            <ScalarProperty Name="ID" ColumnName="ID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model1">
+        <EntityTypeShape EntityType="sepModel.group_visitor" Width="1.5" PointX="0.75" PointY="4.875" Height="2.1610522460937496" IsExpanded="true" />
+        <EntityTypeShape EntityType="sepModel.park_ranger" Width="1.5" PointX="0.75" PointY="8.375" Height="2.1610522460937496" IsExpanded="true" />
+        <EntityTypeShape EntityType="sepModel.track" Width="1.5" PointX="3.75" PointY="0.75" Height="2.3520719401041656" IsExpanded="true" />
+        <EntityTypeShape EntityType="sepModel.visitor" Width="1.5" PointX="3" PointY="4.125" Height="3.4981901041666656" IsExpanded="true" />
+        <EntityTypeShape EntityType="sepModel.visitor_track" Width="1.5" PointX="6" PointY="5" Height="1.9700325520833317" IsExpanded="true" />
+        <AssociationConnector Association="sepModel.d" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5" PointY="7.03605224609375" />
+          <ConnectorPoint PointX="1.5" PointY="7.8731901041666656" />
+          <ConnectorPoint PointX="5.625" PointY="7.8731901041666656" />
+          <ConnectorPoint PointX="5.625" PointY="5.9850162760416659" />
+          <ConnectorPoint PointX="6" PointY="5.9850162760416659" />
+        </AssociationConnector>
+        <AssociationConnector Association="sepModel.ddd" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="5.9555261230468748" />
+          <ConnectorPoint PointX="3" PointY="5.9555261230468748" />
+        </AssociationConnector>
+        <AssociationConnector Association="sepModel.s" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="1.9260359700520828" />
+          <ConnectorPoint PointX="6.75" PointY="1.9260359700520828" />
+          <ConnectorPoint PointX="6.75" PointY="5" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

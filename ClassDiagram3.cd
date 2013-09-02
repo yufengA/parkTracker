@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SEP_ASS3.Controllers.RangerController">
+    <Position X="7" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIgAAAAABEQAAAAAAA=</HashCode>
+      <FileName>Controllers\RangerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SEP_ASS3.Controllers.VisitorController">
+    <Position X="13.25" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAhAACCAAAAAAAAAAAAAAAAAAAAAAAAAAAEAIAAAAAA=</HashCode>
+      <FileName>Controllers\VisitorController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SEP_ASS3.Models.BaseDao">
+    <Position X="10.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\BaseDao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SEP_ASS3.Models.MailService">
+    <Position X="10.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAIAAAAAAACAAAAAAAAAgAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\MailService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SEP_ASS3.Models.RangerDAO">
+    <Position X="14.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Models\RangerDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SEP_ASS3.Models.RangerManager">
+    <Position X="5.25" Y="8.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAgEEAAACAAAAAAAAAAAAAAAAAAgAAAAAAAAAAoAAAE=</HashCode>
+      <FileName>Models\RangerManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SEP_ASS3.Models.TrackDAO">
+    <Position X="6" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAQAAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Models\TrackDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SEP_ASS3.Models.VisitorDAO">
+    <Position X="10.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAFAAAAABsAQAA=</HashCode>
+      <FileName>Models\VisitorDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SEP_ASS3.Models.VisitorManager">
+    <Position X="14.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAQAAQAAAAAAAAAAgAAAAAAACAEAAAAAAAA=</HashCode>
+      <FileName>Models\VisitorManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei" Size="9" />
+</ClassDiagram>

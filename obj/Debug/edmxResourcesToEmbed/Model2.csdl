@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sepModel1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="sepEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="group_visitor" EntityType="sepModel1.group_visitor" />
+    <EntitySet Name="park_ranger" EntityType="sepModel1.park_ranger" />
+    <EntitySet Name="track" EntityType="sepModel1.track" />
+    <EntitySet Name="visitor" EntityType="sepModel1.visitor" />
+    <EntitySet Name="visitor_track" EntityType="sepModel1.visitor_track" />
+    <AssociationSet Name="d" Association="sepModel1.d">
+      <End Role="group_visitor" EntitySet="group_visitor" />
+      <End Role="visitor_track" EntitySet="visitor_track" />
+    </AssociationSet>
+    <AssociationSet Name="ddd" Association="sepModel1.ddd">
+      <End Role="group_visitor" EntitySet="group_visitor" />
+      <End Role="visitor" EntitySet="visitor" />
+    </AssociationSet>
+    <AssociationSet Name="s" Association="sepModel1.s">
+      <End Role="track" EntitySet="track" />
+      <End Role="visitor_track" EntitySet="visitor_track" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="group_visitor">
+    <Key>
+      <PropertyRef Name="group_id" />
+    </Key>
+    <Property Name="group_id" Type="String" Nullable="false" />
+    <Property Name="startTime" Type="DateTime" />
+    <Property Name="endTime" Type="DateTime" />
+    <Property Name="duration" Type="Int32" />
+    <NavigationProperty Name="visitor_track" Relationship="sepModel1.d" FromRole="group_visitor" ToRole="visitor_track" />
+    <NavigationProperty Name="visitor" Relationship="sepModel1.ddd" FromRole="group_visitor" ToRole="visitor" />
+  </EntityType>
+  <EntityType Name="park_ranger">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="businessPhone" Type="String" />
+    <Property Name="dob" Type="DateTime" />
+    <Property Name="password" Type="String" />
+    <Property Name="firstName" Type="String" />
+    <Property Name="lastName" Type="String" />
+  </EntityType>
+  <EntityType Name="track">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="startPoint" Type="String" />
+    <Property Name="destination" Type="String" />
+    <Property Name="visitedTime" Type="Int32" />
+    <Property Name="overdueTime" Type="Int32" />
+    <Property Name="duration" Type="Int32" />
+    <NavigationProperty Name="visitor_track" Relationship="sepModel1.s" FromRole="track" ToRole="visitor_track" />
+  </EntityType>
+  <EntityType Name="visitor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" />
+    <Property Name="firstName" Type="String" />
+    <Property Name="lastName" Type="String" />
+    <Property Name="email" Type="String" />
+    <Property Name="address" Type="String" />
+    <Property Name="contactNumber" Type="String" />
+    <Property Name="dob" Type="DateTime" />
+    <Property Name="signedOut" Type="Boolean" />
+    <Property Name="isoverdue" Type="Boolean" />
+    <Property Name="medicalDetails" Type="String" />
+    <Property Name="group_id" Type="String" />
+    <Property Name="mailSent" Type="Boolean" />
+    <NavigationProperty Name="group_visitor" Relationship="sepModel1.ddd" FromRole="visitor" ToRole="group_visitor" />
+  </EntityType>
+  <EntityType Name="visitor_track">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="group_ID" Type="String" Nullable="false" />
+    <Property Name="track_ID" Type="Int32" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="group_visitor" Relationship="sepModel1.d" FromRole="visitor_track" ToRole="group_visitor" />
+    <NavigationProperty Name="track" Relationship="sepModel1.s" FromRole="visitor_track" ToRole="track" />
+  </EntityType>
+  <Association Name="d">
+    <End Role="group_visitor" Type="sepModel1.group_visitor" Multiplicity="1" />
+    <End Role="visitor_track" Type="sepModel1.visitor_track" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="group_visitor">
+        <PropertyRef Name="group_id" />
+      </Principal>
+      <Dependent Role="visitor_track">
+        <PropertyRef Name="group_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ddd">
+    <End Role="group_visitor" Type="sepModel1.group_visitor" Multiplicity="0..1" />
+    <End Role="visitor" Type="sepModel1.visitor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="group_visitor">
+        <PropertyRef Name="group_id" />
+      </Principal>
+      <Dependent Role="visitor">
+        <PropertyRef Name="group_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="s">
+    <End Role="track" Type="sepModel1.track" Multiplicity="1" />
+    <End Role="visitor_track" Type="sepModel1.visitor_track" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="track">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="visitor_track">
+        <PropertyRef Name="track_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

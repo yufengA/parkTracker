@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sepModel1StoreContainer" CdmEntityContainer="sepEntities">
+    <EntitySetMapping Name="group_visitor">
+      <EntityTypeMapping TypeName="sepModel1.group_visitor">
+        <MappingFragment StoreEntitySet="group_visitor">
+          <ScalarProperty Name="group_id" ColumnName="group_id" />
+          <ScalarProperty Name="startTime" ColumnName="startTime" />
+          <ScalarProperty Name="endTime" ColumnName="endTime" />
+          <ScalarProperty Name="duration" ColumnName="duration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="park_ranger">
+      <EntityTypeMapping TypeName="sepModel1.park_ranger">
+        <MappingFragment StoreEntitySet="park_ranger">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="businessPhone" ColumnName="businessPhone" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="track">
+      <EntityTypeMapping TypeName="sepModel1.track">
+        <MappingFragment StoreEntitySet="track">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="startPoint" ColumnName="startPoint" />
+          <ScalarProperty Name="destination" ColumnName="destination" />
+          <ScalarProperty Name="visitedTime" ColumnName="visitedTime" />
+          <ScalarProperty Name="overdueTime" ColumnName="overdueTime" />
+          <ScalarProperty Name="duration" ColumnName="duration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="visitor">
+      <EntityTypeMapping TypeName="sepModel1.visitor">
+        <MappingFragment StoreEntitySet="visitor">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="contactNumber" ColumnName="contactNumber" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="signedOut" ColumnName="signedOut" />
+          <ScalarProperty Name="isoverdue" ColumnName="isoverdue" />
+          <ScalarProperty Name="medicalDetails" ColumnName="medicalDetails" />
+          <ScalarProperty Name="group_id" ColumnName="group_id" />
+          <ScalarProperty Name="mailSent" ColumnName="mailSent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="visitor_track">
+      <EntityTypeMapping TypeName="sepModel1.visitor_track">
+        <MappingFragment StoreEntitySet="visitor_track">
+          <ScalarProperty Name="group_ID" ColumnName="group_ID" />
+          <ScalarProperty Name="track_ID" ColumnName="track_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

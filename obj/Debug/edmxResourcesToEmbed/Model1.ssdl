@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sepModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="sepModelStoreContainer">
+    <EntitySet Name="group_visitor" EntityType="sepModel.Store.group_visitor" store:Type="Tables" Schema="sep" />
+    <EntitySet Name="park_ranger" EntityType="sepModel.Store.park_ranger" store:Type="Tables" Schema="sep" />
+    <EntitySet Name="track" EntityType="sepModel.Store.track" store:Type="Tables" Schema="sep" />
+    <EntitySet Name="visitor" EntityType="sepModel.Store.visitor" store:Type="Tables" Schema="sep" />
+    <EntitySet Name="visitor_track" EntityType="sepModel.Store.visitor_track" store:Type="Tables" Schema="sep" />
+    <AssociationSet Name="d" Association="sepModel.Store.d">
+      <End Role="group_visitor" EntitySet="group_visitor" />
+      <End Role="visitor_track" EntitySet="visitor_track" />
+    </AssociationSet>
+    <AssociationSet Name="ddd" Association="sepModel.Store.ddd">
+      <End Role="group_visitor" EntitySet="group_visitor" />
+      <End Role="visitor" EntitySet="visitor" />
+    </AssociationSet>
+    <AssociationSet Name="s" Association="sepModel.Store.s">
+      <End Role="track" EntitySet="track" />
+      <End Role="visitor_track" EntitySet="visitor_track" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="group_visitor">
+    <Key>
+      <PropertyRef Name="group_id" />
+    </Key>
+    <Property Name="group_id" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="startTime" Type="datetime" />
+    <Property Name="endTime" Type="datetime" />
+    <Property Name="duration" Type="int" />
+  </EntityType>
+  <EntityType Name="park_ranger">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="businessPhone" Type="varchar" MaxLength="10" />
+    <Property Name="dob" Type="datetime" />
+    <Property Name="password" Type="varchar" MaxLength="10" />
+    <Property Name="firstName" Type="varchar" MaxLength="20" />
+    <Property Name="lastName" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="track">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="startPoint" Type="varchar" MaxLength="45" />
+    <Property Name="destination" Type="varchar" MaxLength="45" />
+    <Property Name="visitedTime" Type="int" />
+    <Property Name="overdueTime" Type="int" />
+    <Property Name="duration" Type="int" />
+  </EntityType>
+  <EntityType Name="visitor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="firstName" Type="varchar" MaxLength="20" />
+    <Property Name="lastName" Type="varchar" MaxLength="20" />
+    <Property Name="email" Type="varchar" MaxLength="20" />
+    <Property Name="address" Type="varchar" MaxLength="40" />
+    <Property Name="contactNumber" Type="varchar" MaxLength="10" />
+    <Property Name="dob" Type="datetime" />
+    <Property Name="signedOut" Type="bool" />
+    <Property Name="isoverdue" Type="bool" />
+    <Property Name="medicalDetails" Type="varchar" />
+    <Property Name="group_id" Type="varchar" MaxLength="50" />
+    <Property Name="mailSent" Type="bool" />
+  </EntityType>
+  <EntityType Name="visitor_track">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="group_ID" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="track_ID" Type="int" Nullable="false" />
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <Association Name="d">
+    <End Role="group_visitor" Type="sepModel.Store.group_visitor" Multiplicity="1" />
+    <End Role="visitor_track" Type="sepModel.Store.visitor_track" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="group_visitor">
+        <PropertyRef Name="group_id" />
+      </Principal>
+      <Dependent Role="visitor_track">
+        <PropertyRef Name="group_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ddd">
+    <End Role="group_visitor" Type="sepModel.Store.group_visitor" Multiplicity="0..1" />
+    <End Role="visitor" Type="sepModel.Store.visitor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="group_visitor">
+        <PropertyRef Name="group_id" />
+      </Principal>
+      <Dependent Role="visitor">
+        <PropertyRef Name="group_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="s">
+    <End Role="track" Type="sepModel.Store.track" Multiplicity="1" />
+    <End Role="visitor_track" Type="sepModel.Store.visitor_track" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="track">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="visitor_track">
+        <PropertyRef Name="track_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

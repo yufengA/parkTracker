@@ -1,0 +1,44 @@
+﻿<systemInfo osVersion="6.1" winDir="C:\Windows" machineName="YUFENGWANG-PC" processorArchitecture="x86" msdeployVersion="1.0" buildVersion="7.1.618.0">
+  <iisSystemInfo iisMajorVersion="7" iisMinorVersion="5">
+    <aspNetVersionInfo>
+      <aspNetVersion version="1.1.4322.0" />
+      <aspNetVersion version="2.0.50727.0" />
+      <aspNetVersion version="4.0.30319.0" />
+    </aspNetVersionInfo>
+    <installedComponentInfo>
+      <installedComponent name="ASP" installed="False" />
+      <installedComponent name="ASPNET" installed="False" />
+      <installedComponent name="Authorization" installed="False" />
+      <installedComponent name="BasicAuthentication" installed="False" />
+      <installedComponent name="CGI" installed="False" />
+      <installedComponent name="ClientCertificateMappingAuthentication" installed="False" />
+      <installedComponent name="CustomLogging" installed="False" />
+      <installedComponent name="DefaultDocument" installed="False" />
+      <installedComponent name="DigestAuthentication" installed="False" />
+      <installedComponent name="DirectoryBrowse" installed="False" />
+      <installedComponent name="FTPServer" installed="False" />
+      <installedComponent name="HttpCompressionDynamic" installed="False" />
+      <installedComponent name="HttpCompressionStatic" installed="False" />
+      <installedComponent name="IPSecurity" installed="False" />
+      <installedComponent name="IISCertificateMappingAuthentication" installed="False" />
+      <installedComponent name="HttpTracing" installed="False" />
+      <installedComponent name="HttpRedirect" installed="False" />
+      <installedComponent name="HttpLogging" installed="False" />
+      <installedComponent name="HttpErrors" installed="False" />
+      <installedComponent name="ISAPIExtensions" installed="False" />
+      <installedComponent name="ISAPIFilter" installed="False" />
+      <installedComponent name="LoggingLibraries" installed="False" />
+      <installedComponent name="Metabase" installed="False" />
+      <installedComponent name="NetFxEnvironment" installed="True" />
+      <installedComponent name="NetFxExtensibility" installed="False" />
+      <installedComponent name="ODBCLogging" installed="False" />
+      <installedComponent name="ProcessModel" installed="False" />
+      <installedComponent name="RequestFiltering" installed="False" />
+      <installedComponent name="RequestMonitor" installed="False" />
+      <installedComponent name="ServerSideInclude" installed="False" />
+      <installedComponent name="StaticContent" installed="False" />
+      <installedComponent name="W3SVC" installed="False" />
+      <installedComponent name="WindowsAuthentication" installed="False" />
+    </installedComponentInfo>
+  </iisSystemInfo>
+</systemInfo>

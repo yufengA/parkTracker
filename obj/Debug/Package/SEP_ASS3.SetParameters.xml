@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="Default Web Site/SEP_ASS3_deploy" />
+  <setParameter name="ApplicationServices-Web.config Connection String" value="data source=.\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|aspnetdb.mdf;User Instance=true" />
+  <setParameter name="sepEntities-Web.config Connection String" value="metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=MySql.Data.MySqlClient;provider connection string=&quot;server=aidatabase.chgcxjhdnzqb.us-east-1.rds.amazonaws.com;User Id=coggeeGroup;password=11167552;Persist Security Info=True;database=sep&quot;" />
+  <setParameter name="sepEntities2-Web.config Connection String" value="metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=MySql.Data.MySqlClient;provider connection string=&quot;server=aidatabase.chgcxjhdnzqb.us-east-1.rds.amazonaws.com;User Id=coggeeGroup;password=11167552;Persist Security Info=True;database=sep&quot;" />
+</parameters>

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SEP_ASS3.Controllers.RangerController">
+    <Position X="5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAIAAAAAABEQAAAAAAA=</HashCode>
+      <FileName>Controllers\RangerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SEP_ASS3.Controllers.VisitorController">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAhAACCAAAAAAAAAAAAgAAAAAQAAAAAAAAEAIAAAAAA=</HashCode>
+      <FileName>Controllers\VisitorController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SEP_ASS3.MvcApplication" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAIAAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SEP_ASS3.Models.BaseDao" Collapsed="true">
+    <Position X="2.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\BaseDao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SEP_ASS3.Models.RangerDAO">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Models\RangerDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SEP_ASS3.Models.RangerManager">
+    <Position X="5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAACAAAAAAAAAAgAAAAAAAAAAAAAAAAAAoAAAE=</HashCode>
+      <FileName>Models\RangerManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SEP_ASS3.Models.TrackDAO">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAQAAAAAAgAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Models\TrackDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SEP_ASS3.Models.VisitorDAO">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAFAAAAABsAQAA=</HashCode>
+      <FileName>Models\VisitorDAO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SEP_ASS3.Models.VisitorManager">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAQAAQAAAAAgAAAAgAAAAAAACAEAAAAAAAA=</HashCode>
+      <FileName>Models\VisitorManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SEP_ASS3.group_visitor" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EQEAACJgIAABAAAAABAgACAAAAAEgABAAAAAAAEAADA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SEP_ASS3.park_ranger" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAAQBAhBiAAAABEMIEAQAAAAAAAACBQACgwEAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SEP_ASS3.track" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEICBMEEgAIwCAAABAEAACABAABgABEAhQABAAECAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SEP_ASS3.visitor" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EQEBkAEwBABQiABgBBEMIAIAEGIEACAQCBQAiUEOABE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SEP_ASS3.visitor_track" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAIEAAAAAAAgADBAAAEAAEAAAAAICAABBAAAAAEKAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="ApplicationServices-Web.config Connection String" description="ApplicationServices Connection String used in web.config by the application to access the database." defaultvalue="data source=.\SQLEXPRESS;Integrated Security=SSPI;AttachDBFilename=|DataDirectory|aspnetdb.mdf;User Instance=true" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\AWSDeploy\.d8856821\\Web\.config$" match="/configuration/connectionStrings/add[@name='ApplicationServices']/@connectionString" />
+  </parameter>
+  <parameter name="sepEntities-Web.config Connection String" description="sepEntities Connection String used in web.config by the application to access the database." defaultvalue="metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=MySql.Data.MySqlClient;provider connection string=&quot;server=aidatabase.chgcxjhdnzqb.us-east-1.rds.amazonaws.com;User Id=coggeeGroup;password=11167552;Persist Security Info=True;database=sep&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\AWSDeploy\.d8856821\\Web\.config$" match="/configuration/connectionStrings/add[@name='sepEntities']/@connectionString" />
+  </parameter>
+  <parameter name="sepEntities2-Web.config Connection String" description="sepEntities2 Connection String used in web.config by the application to access the database." defaultvalue="metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=MySql.Data.MySqlClient;provider connection string=&quot;server=aidatabase.chgcxjhdnzqb.us-east-1.rds.amazonaws.com;User Id=coggeeGroup;password=11167552;Persist Security Info=True;database=sep&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\AWSDeploy\.d8856821\\Web\.config$" match="/configuration/connectionStrings/add[@name='sepEntities2']/@connectionString" />
+  </parameter>
+</parameters>

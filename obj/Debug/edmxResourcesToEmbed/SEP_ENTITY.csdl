@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sepModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="My_Entity2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="park_ranger" EntityType="sepModel.park_ranger" />
+    <EntitySet Name="track" EntityType="sepModel.track" />
+    <EntitySet Name="visitor" EntityType="sepModel.visitor" />
+    <EntitySet Name="visitor_track" EntityType="sepModel.visitor_track" />
+    <AssociationSet Name="FK_Track" Association="sepModel.FK_Track">
+      <End Role="track" EntitySet="track" />
+      <End Role="visitor_track" EntitySet="visitor_track" />
+    </AssociationSet>
+    <AssociationSet Name="group_visitor" Association="sepModel.group_visitor">
+      <End Role="visitor_track" EntitySet="visitor_track" />
+      <End Role="visitor" EntitySet="visitor" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="park_ranger">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="businessPhone" Type="String" />
+    <Property Name="dob" Type="DateTime" />
+    <Property Name="password" Type="String" />
+    <Property Name="firstName" Type="String" />
+    <Property Name="lastName" Type="String" />
+  </EntityType>
+  <EntityType Name="track">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="startPoint" Type="String" />
+    <Property Name="destination" Type="String" />
+    <Property Name="visitedTime" Type="Int32" />
+    <Property Name="overdueTime" Type="Int32" />
+    <Property Name="duration" Type="Int32" />
+    <NavigationProperty Name="visitor_track" Relationship="sepModel.FK_Track" FromRole="track" ToRole="visitor_track" />
+  </EntityType>
+  <EntityType Name="visitor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="firstName" Type="String" />
+    <Property Name="lastName" Type="String" />
+    <Property Name="email" Type="String" />
+    <Property Name="address" Type="String" />
+    <Property Name="contactNumber" Type="String" />
+    <Property Name="dob" Type="DateTime" />
+    <Property Name="signedOut" Type="Boolean" />
+    <Property Name="isoverdue" Type="Boolean" />
+    <Property Name="medicalDetails" Type="String" />
+    <Property Name="group_ID" Type="Int32" />
+    <NavigationProperty Name="visitor_track" Relationship="sepModel.group_visitor" FromRole="visitor" ToRole="visitor_track" />
+  </EntityType>
+  <EntityType Name="visitor_track">
+    <Key>
+      <PropertyRef Name="group_ID" />
+    </Key>
+    <Property Name="group_ID" Type="Int32" Nullable="false" />
+    <Property Name="track_ID" Type="Int32" Nullable="false" />
+    <Property Name="startTime" Type="DateTime" />
+    <Property Name="endTime" Type="DateTime" />
+    <Property Name="duration" Type="Int32" />
+    <NavigationProperty Name="track" Relationship="sepModel.FK_Track" FromRole="visitor_track" ToRole="track" />
+    <NavigationProperty Name="visitor" Relationship="sepModel.group_visitor" FromRole="visitor_track" ToRole="visitor" />
+  </EntityType>
+  <Association Name="FK_Track">
+    <End Role="track" Type="sepModel.track" Multiplicity="1" />
+    <End Role="visitor_track" Type="sepModel.visitor_track" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="track">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="visitor_track">
+        <PropertyRef Name="track_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="group_visitor">
+    <End Role="visitor_track" Type="sepModel.visitor_track" Multiplicity="*" />
+    <End Role="visitor" Type="sepModel.visitor" Multiplicity="*" />
+  </Association>
+</Schema>
