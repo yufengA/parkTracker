@@ -13,3 +13,8 @@ D:\学习\c#_project\SEP_ASS3_20121106\SEP_ASS3\obj\Debug\SEP_ASS3.dll
 D:\学习\c#_project\SEP_ASS3_20121106\SEP_ASS3\bin\SEP_ASS3.dll
 D:\学习\c#_project\SEP_ASS3_20121106\SEP_ASS3\bin\SEP_ASS3.pdb
 D:\学习\c#_project\SEP_ASS3_20121106\SEP_ASS3\obj\Debug\SEP_ASS3.pdb
+D:\study\c#_project\SEP_ASS3_20121106\SEP_ASS3_20121106\SEP_ASS3\bin\SEP_ASS3.dll
+D:\study\c#_project\SEP_ASS3_20121106\SEP_ASS3_20121106\SEP_ASS3\bin\SEP_ASS3.pdb
+D:\study\c#_project\SEP_ASS3_20121106\SEP_ASS3_20121106\SEP_ASS3\obj\Debug\ResolveAssemblyReference.cache
+D:\study\c#_project\SEP_ASS3_20121106\SEP_ASS3_20121106\SEP_ASS3\obj\Debug\SEP_ASS3.dll
+D:\study\c#_project\SEP_ASS3_20121106\SEP_ASS3_20121106\SEP_ASS3\obj\Debug\SEP_ASS3.pdb
