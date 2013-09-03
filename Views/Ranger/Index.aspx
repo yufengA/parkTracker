@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>Index</title>
+    <title>Ranger Sign In</title>
 <script src="/jquery/jquery1.7.js" type="text/javascript"></script>
 <script src="/jquery/block.js" type="text/javascript"></script>
 <script src="/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
@@ -14,14 +14,17 @@
 </head>
 <body>
     <form action="/Ranger/SetSAREmailAddress" class="offset12" style="padding-top:30px;">
-    <input type="email" name="SAREmailAddress" />
+    <div class="input-append">
+    <input type="email" required name="SAREmailAddress" />
     <input type="submit" value="Set SAR Email" class="btn"/>
+    </div>
+  
     </form>
 
     <div class="main">
     <a id="view_all_btn" href="/Ranger/AllTracks" style="margin-bottom:30px;">View Tracks</a>
     <a id="view_all_btn" href="/Ranger/AllVisitors">View All Visitors</a>
-   
+    <%if(( (List<visitor>) ViewData["Visitors"]).Count>0){ %>
           <table id="all_visitor_list" style="margin-top:30px;">
           <tr>
           <th>First Name</th>
@@ -49,7 +52,7 @@
           <%} %></td>
           </tr>
                    
-        <%} %>     
+        <%} }%>     
           </table>
     </div>
 

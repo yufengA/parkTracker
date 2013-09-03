@@ -35,7 +35,7 @@ CREATE TABLE `visitor_track` (
   KEY `d` (`group_ID`),
   CONSTRAINT `d` FOREIGN KEY (`group_ID`) REFERENCES `group_visitor` (`group_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `s` FOREIGN KEY (`track_ID`) REFERENCES `track` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `visitor_track` (
 
 LOCK TABLES `visitor_track` WRITE;
 /*!40000 ALTER TABLE `visitor_track` DISABLE KEYS */;
-INSERT INTO `visitor_track` VALUES ('9f460aa5-2c8b-4ed7-81ab-ba30cbbbaa75',1,67),('9f460aa5-2c8b-4ed7-81ab-ba30cbbbaa75',3,68),('9f460aa5-2c8b-4ed7-81ab-ba30cbbbaa75',1,69);
+INSERT INTO `visitor_track` VALUES ('9f460aa5-2c8b-4ed7-81ab-ba30cbbbaa75',1,67),('9f460aa5-2c8b-4ed7-81ab-ba30cbbbaa75',3,68),('9f460aa5-2c8b-4ed7-81ab-ba30cbbbaa75',1,69),('1cbcd51c-c338-4051-b424-b64681451771',1,70);
 /*!40000 ALTER TABLE `visitor_track` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-09-03  0:25:05
+-- Dump completed on 2013-09-03 12:41:57

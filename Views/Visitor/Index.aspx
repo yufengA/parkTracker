@@ -16,7 +16,6 @@
             $.blockUI({
                 message: $('#visitor-number-form'),
                 css: {
-                    // height:"500px",
                     cursor: "auto",
                     background: "rgba(0,0,0,0.8)"
                 },
@@ -58,6 +57,7 @@
 </script>	
 </head>
 <body>
+<div class="row-fluid"><div class="span2 offset8"><a href="/Ranger">Ranger Sign In</a></div></div>
 <section class="main">
 	<header class="index">Visitor System<a class="helper" href="#"></a></header>
 	<section id="main_selection">

@@ -19,16 +19,16 @@
      <div class="login_form_comtaner">
      <form action="/Ranger/Login" method="post" id="admin_login_form">
     <table>
-                    <caption><h4 style="color:Red;"><%=ViewData["Error"] %></h4></caption>
+                    <caption><h4 style="color:Black;"><%=ViewData["Error"] %></h4></caption>
 						<tr>
 							<td>Ranger ID</td>
 							<td><input type="text" name="RangerID"
-								value="" class="required digits"><span class="small-error"></span></td>
+								value="1" class="required digits"><span class="small-error"></span></td>
 						</tr>
 						<tr>
 							<td>Password</td>
 							<td><input type="password" name="Password"
-								value=""/><span></span></td>
+								value="123"/><span></span></td>
 						</tr>
      </table>
                         <input type="submit" class="btn" value="Login">

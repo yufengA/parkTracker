@@ -41,7 +41,7 @@ CREATE TABLE `track` (
 
 LOCK TABLES `track` WRITE;
 /*!40000 ALTER TABLE `track` DISABLE KEYS */;
-INSERT INTO `track` VALUES (1,'Auburn','City',2,0,15),(2,'City','Auburn',0,0,12),(3,'Hurstville','Hurstville',13,1,20);
+INSERT INTO `track` VALUES (1,'Organ Pipe','Cape Cod Trail',3,0,3),(2,'Cape Cod Trail','Pine Tree Trail',0,0,2),(3,'Pine Tree Trail','Bowen Trail',13,1,2),(4,'Bowen Trail','Waterfall Bay Trail',0,0,2),(5,'Waterfall Bay Trail','Organ Pipe',0,0,1),(6,'Cape Cod Trail','Louise Trail',0,0,2),(7,'Louise Trail','Trek Trail',0,0,3),(8,'Trek Trail','Tall Tree Trail',0,0,2),(9,'Tall Tree Trail','Red Barron Trail',0,0,4),(10,'Tall Tree Trail','Lila Walk',0,0,2),(11,'Clacton Trail','Lighthouse Lookout',0,0,3),(12,'Lighthouse Lookout','Organ Pipe',0,0,2),(13,'Clacton Trail','Cradle Peak Lookout',0,0,1),(14,'Cradle Peak Lookout','Organ Pipe',0,0,1),(15,'Red Barron Trail','Clacton Trail',0,0,2),(16,'Lila Walk','Clacton Trail',0,0,2);
 /*!40000 ALTER TABLE `track` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-09-03  0:25:03
+-- Dump completed on 2013-09-03 12:41:56

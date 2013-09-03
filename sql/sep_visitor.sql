@@ -49,7 +49,7 @@ CREATE TABLE `visitor` (
 
 LOCK TABLES `visitor` WRITE;
 /*!40000 ALTER TABLE `visitor` DISABLE KEYS */;
-INSERT INTO `visitor` VALUES ('732eeb1c-c386-4765-b87f-360046f2f276','sada','sdasd','wayf128@hotmail.com','sadasd','123','2013-09-10 00:00:00',0,0,'sda','9f460aa5-2c8b-4ed7-81ab-ba30cbbbaa75',0),('897d3b98-b0d5-4794-ad82-75b33c9298e9','asdasd','asdasd','wayf1283@hotmail.com','asd','123','2013-09-18 00:00:00',0,0,'asd','9f460aa5-2c8b-4ed7-81ab-ba30cbbbaa75',0),('e31f0f6a-c9e0-4657-8d6c-4261b9113bd6','asd','asdasd','wayf128@hotmail.com','asdasd','12','2013-09-26 00:00:00',0,0,'asdasd','9f460aa5-2c8b-4ed7-81ab-ba30cbbbaa75',0);
+INSERT INTO `visitor` VALUES ('152680b5-ff8f-44d1-a36f-a2095e16af04','asd','sad','wayf128@hotmail.com','sadasd','0123456789','2013-09-10 00:00:00',0,0,'','1cbcd51c-c338-4051-b424-b64681451771',0),('732eeb1c-c386-4765-b87f-360046f2f276','sada','sdasd','wayf128@hotmail.com','sadasd','123','2013-09-10 00:00:00',0,0,'sda','9f460aa5-2c8b-4ed7-81ab-ba30cbbbaa75',0),('897d3b98-b0d5-4794-ad82-75b33c9298e9','asdasd','asdasd','wayf1283@hotmail.com','asd','123','2013-09-18 00:00:00',0,0,'asd','9f460aa5-2c8b-4ed7-81ab-ba30cbbbaa75',0),('e31f0f6a-c9e0-4657-8d6c-4261b9113bd6','asd','asdasd','wayf128@hotmail.com','asdasd','12','2013-09-26 00:00:00',0,0,'asdasd','9f460aa5-2c8b-4ed7-81ab-ba30cbbbaa75',0);
 /*!40000 ALTER TABLE `visitor` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -62,4 +62,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-09-03  0:25:04
+-- Dump completed on 2013-09-03 12:41:56

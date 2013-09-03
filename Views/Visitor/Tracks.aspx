@@ -103,7 +103,6 @@
         updateDuration();
     }
     function updateDuration() {
-        //alert(newDuration);
         var hour = parseInt(newDuration) + parseInt(totalDuration) > 1 ? " hours" : " hour";
         $("#totalDuration").html("Total duration of your track is <span class='red'>" + (parseInt(totalDuration) + parseInt(newDuration) ) + hour)+"</span>";
         $("input[name='totalDuration']").val((parseInt(newDuration) + parseInt(totalDuration)));
